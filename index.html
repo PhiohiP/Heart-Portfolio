@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart's Portfolio</title>
+    <link rel="icon" href="assets/H.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/028b0e4594.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>A Student of Engineering</p>
+            <h1>Hi, I'm <span>Heart</span> Alphionanda<br>from Indonesia</h1>
+        </div>
+    </div>
+</div> 
+<!----------about---------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="assets/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About <span>Me</span></h1>
+                <p>A student who strives for excellency and driven by a passion for engineering. 
+                A quick-adapter and a problem-solver. A person who likes to question. 
+                An avid lover of learning something new.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')"">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')"">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Python</span><br>Programming Languange</li>
+                        <li><span>Event</span><br>Management and Planning</li>
+                        <li><span>Project</span><br>Management and Planning</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023 - Current</span><br>Internship at Ministry of Secretarial Kabinet KM ITB</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2023 - Current</span><br>Bachelor's Degree of Pre-Engineering at Institut Teknologi Bandung</li>
+                        <li><span>2020 - 2023</span><br>Senior High School, Majoring at Mathematics and Natural Science at MAN 1 Jember</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------Portfolio---------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title"><span>Heart's</span> Portfolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="assets/work-1.png">
+                <div class="layer">
+                    <h3>Python Dijkstra Algorithm</h3>
+                    <p>Implementation of Python programming language to seek shortest path from a certain point to another for a better navigation system in a Smart Car.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="assets/work-2.png">
+                <div class="layer">
+                    <h3>Data Analysis of Tourism in Indonesia</h3>
+                    <p>Analyzing the data for Indonesia Tourism sector for the last 5 years to understand the reasons of the output.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="assets/work-1.png">
+                <div class="layer">
+                    <h3>Python Dijkstra Algorithm</h3>
+                    <p>Implementation of Python programming language to seek shortest path from a certain point to another for a better navigation system in a Smart Car.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="index2.html" class="btn">See More</a>
+    </div>
+</div>
+<!---------Contact--------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact <span>Me</span></h1>
+                <p><i class="fa-regular fa-paper-plane"></i> heartalphionanda@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +6285267780929</p>
+                <div class="social-icons">
+                    <a href="https://www.discordapp.com/users/1109024976020967446"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://www.x.com/@CaciaHeart"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/heartalphionanda/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/heart-alphionanda-72053b24a"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="assets/resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="thanks">
+        <p>Thank you for visiting! Made with <span>Heart</span> by <span>Heart</span></p>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0px";        
+    }
+
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzDR6O6JrfMQG6IyRv8apJ-KrEGgYmnvMgYNNsp_KvNGp5WHiRWQLsQe1DZQbccQqQq/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+</html>
